@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Health Care Center</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link
+      rel="shortcut icon"
+      href="../static/favicon.svg"
+      type="image/svg+xml"
+    />
+  </head>
+
+  <style>
+    :root {
+      --bg-oxford-blue-2: hsla(222, 47%, 11%, 1);
+      --text-shadow-blue: hsla(217, 24%, 59%, 1);
+      --lineHeight-4: 1.5;
+    }
+    body {
+      background-color: var(--bg-oxford-blue-2);
+      color: var(--text-shadow-blue);
+      line-height: var(--lineHeight-4);
+      overflow-y: overlay;
+    }
+
+    .logo {
+      width: 50px;
+      height: 50px;
+      color: black;
+      margin-top: 0;
+      margin-left: 2px;
+    }
+
+    .myimg {
+      width: 50px;
+      height: 50px;
+      border: 2px solid black;
+      border-radius: 25px;
+    }
+  </style>
+
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    /* body{
+    background: #E3F2FD;
+} */
+
+    .chatbot-toggler {
+      position: fixed;
+      right: 40px;
+      bottom: 35px;
+      height: 50px;
+      width: 50px;
+      color: #fff;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      background: #724ae8;
+      border-radius: 50%;
+      transition: all 0.2s ease;
+    }
+
+    .show-chatbot .chatbot-toggler {
+      transform: rotate(90deg);
+    }
+
+    .chatbot-toggler span {
+      position: absolute;
+    }
+
+    .show-chatbot .chatbot-toggler span:first-child,
+    .chatbot-toggler span:last-child {
+      opacity: 0;
+    }
+
+    .show-chatbot .chatbot-toggler span:last-child {
+      opacity: 1;
+    }
+
+    .chatbot {
+      position: fixed;
+      right: 40px;
+      bottom: 100px;
+      width: 420px;
+      transform: scale(0.5);
+      opacity: 0;
+      pointer-events: none;
+      background: #fff;
+      border-radius: 15px;
+      transform: bottom right;
+      box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1),
+        0 32px 64px -48px rgba(0, 0, 0, 0.5);
+      transition: all 0.1s ease;
+    }
+
+    .show-chatbot .chatbot {
+      transform: scale(1);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .chatbot header {
+      background: #724ae8;
+      padding: 16px 0;
+      text-align: center;
+      position: relative;
+    }
+
+    .chabot header h2 {
+      color: #fff;
+      font-size: 1.4rem;
+    }
+
+    .chatbot header span {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      color: #fff;
+      cursor: pointer;
+      display: none;
+      transform: translateY(-50%);
+    }
+
+    .chatbot .chatbox {
+      height: 510px;
+      overflow-y: auto;
+      padding: 30px 20px 100px;
+    }
+
+    .chabox .chat {
+      display: flex;
+    }
+
+    .chatbox .incoming span {
+      height: 32px;
+      width: 32px;
+      color: #fff;
+      align-self: center;
+      background: #724ae8;
+      text-align: center;
+      line-height: 32px;
+      border-radius: 4px;
+      margin: 0 10px 7px 0;
+    }
+
+    .chatbox .outgoing {
+      margin: 20px 0;
+      justify-content: flex-end;
+    }
+
+    .chatbox .chat p {
+      color: #fff;
+      max-width: 75%;
+      white-space: pre-wrap;
+      font-size: 0.95rem;
+      padding: 12px 16px;
+      border-radius: 10px 10px 0 10px;
+      background: #724ae8;
+    }
+
+    /* .chatbox .chat p.error{
+    color: #721c24;
+    background: #f8d7da;
+} */
+
+    .chatbox .incoming p {
+      color: #000;
+      background: #f2f2f2;
+      border-radius: 10px 10px 10px 0;
+    }
+
+    .chatbot .chat-input {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      gap: 5px;
+      background: #fff;
+      padding: 5px 20px;
+      border-top: 1px solid #ccc;
+    }
+
+    .chat-input textarea {
+      height: 55px;
+      width: 100%;
+      border: none;
+      outline: none;
+      max-height: 180px;
+      font-size: 0.95rem;
+      resize: 16px 15px 16px 0;
+    }
+
+    .chat-input span {
+      align-self: flex-end;
+      height: 55px;
+      line-height: 55px;
+      color: #724ae8;
+      font-size: 1.35rem;
+      cursor: pointer;
+      visibility: hidden;
+    }
+
+    .chat-input textarea:valid ~ span {
+      visibility: visible;
+    }
+
+    @media (max-width: 490px) {
+      .chatbot {
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+      }
+
+      .chatbot .chatbox {
+        height: 90%;
+      }
+
+      .chatbot header span {
+        display: block;
+      }
+    }
+  </style>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <!-- Logo at the top-left corner -->
+        <div class="logo">
+          <img
+            class="myimg"
+            src="{{ url_for('static', filename='img.png') }}"
+            alt=""
+          />
+        </div>
+
+        <a class="navbar-brand" href="#" style="color: hsla(199, 69%, 84%, 1)"
+          >Health Center</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="#"
+                style="color: hsla(199, 69%, 84%, 1)"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="/about"
+                style="color: hsla(199, 69%, 84%, 1)"
+                >About</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="/contact"
+                style="color: hsla(199, 69%, 84%, 1)"
+              >
+                Contact</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="/developer"
+                style="color: hsla(199, 69%, 84%, 1)"
+                >Developer</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="/blog"
+                style="color: hsla(199, 69%, 84%, 1)"
+                >Blog</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                style="
+                  text-decoration: underline;
+                  color: hsla(199, 69%, 84%, 1);
+                "
+                href="/pageNotFound"
+                >Submit your data</a
+              >
+            </li>
+          </ul>
+          <!-- <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form> -->
+
+          <a
+            href="https://doctor-appointment-ncqn.onrender.com"
+            class="btn btn-primary"
+            >Book Appointment</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- main form of page -->
+    <h1 class="mt-4 my-4 text-center text-green" style="color: aqua">
+      Health Care Center
+    </h1>
+    <div
+      class="container my-4 mt-4"
+      style="
+        background: black;
+        color: white;
+        border-radius: 15px;
+        padding: 40px;
+      "
+    >
+      <form action="/predict" method="post">
+        <div class="form-group">
+          <label for="symptoms" style="color: aqua">Select Symptoms:</label>
+          <input
+            type="text"
+            class="form-control"
+            ,
+            id="symptoms"
+            name="symptoms"
+            placeholder="type systems such as itching, sleeping, aching etc"
+          />
+        </div>
+        <br />
+        <button
+          type="button"
+          id="startSpeechRecognition"
+          class="btn btn-primary"
+          style="margin-left: 3px; border: 1px solid white; border-radius: 20px"
+        >
+          Start Speech Recognition
+        </button>
+        <br />
+
+        <!-- Display the transcribed text here -->
+        <div name="mysysms" id="transcription"></div>
+
+        {% if message %}
+        <p>{{ message }}</p>
+        {% endif %}
+        <br />
+
+        <button
+          type="submit"
+          class="btn btn-danger btn-lg"
+          style="width: 100%; padding: 14px; margin-bottom: 5px"
+        >
+          Predict
+        </button>
+      </form>
+    </div>
+
+    {% if predicted_disease %}
+
+    <!-- Results -->
+    <h1 class="text-center my-4 mt-4" style="color: aqua">
+      Our AI System Results
+    </h1>
+    <div class="container">
+      <div class="result-container">
+        <!-- Buttons to toggle display -->
+        <button
+          class="toggle-button"
+          data-bs-toggle="modal"
+          data-bs-target="#diseaseModal"
+          style="
+            padding: 4px;
+            margin: 5px 40px 5px 0;
+            font-size: 20px;
+            font-weight: bold;
+            width: 140px;
+            border-radius: 5px;
+            background: #f39334;
+            color: black;
+          "
+        >
+          Disease
+        </button>
+        <button
+          class="toggle-button"
+          data-bs-toggle="modal"
+          data-bs-target="#descriptionModal"
+          style="
+            padding: 4px;
+            margin: 5px 40px 5px 0;
+            font-size: 20px;
+            font-weight: bold;
+            width: 140px;
+            border-radius: 5px;
+            background: #268af3;
+            color: black;
+          "
+        >
+          Description
+        </button>
+        <button
+          class="toggle-button"
+          data-bs-toggle="modal"
+          data-bs-target="#precautionModal"
+          style="
+            padding: 4px;
+            margin: 5px 40px 5px 0;
+            font-size: 20px;
+            font-weight: bold;
+            width: 140px;
+            border-radius: 5px;
+            background: #f371f9;
+            color: black;
+          "
+        >
+          Precaution
+        </button>
+        <button
+          class="toggle-button"
+          data-bs-toggle="modal"
+          data-bs-target="#medicationsModal"
+          style="
+            padding: 4px;
+            margin: 5px 40px 5px 0;
+            font-size: 20px;
+            font-weight: bold;
+            width: 140px;
+            border-radius: 5px;
+            background: #f8576f;
+            color: black;
+          "
+        >
+          Medications
+        </button>
+        <button
+          class="toggle-button"
+          data-bs-toggle="modal"
+          data-bs-target="#workoutsModal"
+          style="
+            padding: 4px;
+            margin: 5px 40px 5px 0;
+            font-size: 20px;
+            font-weight: bold;
+            width: 140px;
+            border-radius: 5px;
+            background: #99f741;
+            color: black;
+          "
+        >
+          Workouts
+        </button>
+        <button
+          class="toggle-button"
+          data-bs-toggle="modal"
+          data-bs-target="#dietsModal"
+          style="
+            padding: 4px;
+            margin: 5px 40px 5px 0;
+            font-size: 20px;
+            font-weight: bold;
+            width: 140px;
+            border-radius: 5px;
+            background: #e5e23d;
+            color: black;
+          "
+        >
+          Diets
+        </button>
+      </div>
+    </div>
+
+    {% endif %}
+
+    <!-- Disease Modal -->
+    <div
+      class="modal fade"
+      id="diseaseModal"
+      tabindex="-1"
+      aria-labelledby="diseaseModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div
+            class="modal-header"
+            style="background-color: #020606; color: #fff"
+          >
+            <!-- Set header background color inline -->
+            <h5 class="modal-title" id="diseaseModalLabel">
+              Predicted Disease
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body" style="background-color: modal-body-color">
+            <!-- Set modal body background color inline -->
+            <p>{{ predicted_disease }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Description Modal -->
+    <div
+      class="modal fade"
+      id="descriptionModal"
+      tabindex="-1"
+      aria-labelledby="descriptionModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div
+            class="modal-header"
+            style="background-color: #020606; color: white"
+          >
+            <h5 class="modal-title" id="descriptionModalLabel">Description</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>{{ dis_des }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Precaution Modal -->
+    <div
+      class="modal fade"
+      id="precautionModal"
+      tabindex="-1"
+      aria-labelledby="precautionModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div
+            class="modal-header"
+            style="background-color: #020606; color: white"
+          >
+            <h5 class="modal-title" id="precautionModalLabel">Precaution</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <ul>
+              {% for i in my_precautions %}
+              <li>{{ i }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Medications Modal -->
+    <div
+      class="modal fade"
+      id="medicationsModal"
+      tabindex="-1"
+      aria-labelledby="medicationsModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div
+            class="modal-header"
+            style="background-color: #020606; color: white"
+          >
+            <h5 class="modal-title" id="medicationsModalLabel">Medications</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <ul>
+              {% for i in medications %}
+              <li>{{ i }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Workouts Modal -->
+    <div
+      class="modal fade"
+      id="workoutsModal"
+      tabindex="-1"
+      aria-labelledby="workoutsModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div
+            class="modal-header"
+            style="background-color: #020606; color: white"
+          >
+            <h5 class="modal-title" id="workoutsModalLabel">Workouts</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <ul>
+              {% for i in workout %}
+              <li>{{ i }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Diets Modal -->
+    <div
+      class="modal fade"
+      id="dietsModal"
+      tabindex="-1"
+      aria-labelledby="dietsModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div
+            class="modal-header"
+            style="background-color: #020606; color: white"
+          >
+            <h5 class="modal-title" id="dietsModalLabel">Diets</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <ul>
+              {% for i in my_diet %}
+              <li>{{ i }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button class="chatbot-toggler">
+      <span class="material-symbols-outlined">mode_comment</span>
+      <span class="material-symbols-outlined">close</span>
+    </button>
+
+    <div class="chatbot">
+      <header>
+        <h2>Chatbot</h2>
+        <span class="close-btn material-symbols-outlined">close</span>
+      </header>
+      <ul class="chatbox">
+        <li class="chat incoming">
+          <span class="material-symbols-outlined">smart_toy</span>
+          <!-- <p>Hi there 👋 <br>How can I help you today? </p> -->
+        </li>
+      </ul>
+      <div class="chat-input">
+        <textarea placeholder="Enter a message..." required></textarea>
+        <span id="send-btn" class="material-symbols-outlined">send</span>
+      </div>
+    </div>
+
+    <script>
+      const startSpeechRecognitionButton = document.getElementById(
+        "startSpeechRecognition"
+      );
+      const transcriptionDiv = document.getElementById("transcription");
+
+      startSpeechRecognitionButton.addEventListener(
+        "click",
+        startSpeechRecognition
+      );
+
+      function startSpeechRecognition() {
+        const recognition = new webkitSpeechRecognition(); // Use webkitSpeechRecognition for compatibility
+
+        recognition.lang = "en-US"; // Set the language for recognition
+
+        recognition.onresult = function (event) {
+          const result = event.results[0][0].transcript;
+          transcriptionDiv.textContent = result;
+        };
+
+        recognition.onend = function () {
+          console.log("Speech recognition ended.");
+        };
+
+        recognition.start();
+      }
+    </script>
+
+    <script>
+      const chatInput = document.querySelector(".chat-input textarea");
+      const sendChatBtn = document.querySelector(".chat-input span");
+      const chatbox = document.querySelector(".chatbox");
+      const chatbotToggler = document.querySelector(".chatbot-toggler");
+      const chatbotCloseBtn = document.querySelector(".close-btn");
+
+      let userMessage;
+      const API_KEY = "AIzaSyAj4V3Iuo9AkiDY7tyhjQ3OXcya8Mx6vw8";
+      const inputInHeight = chatInput.scrollHeight;
+
+      const createChatLi = (message, className) => {
+        const chatLi = document.createElement("li");
+        chatLi.classList.add("chat", className);
+        let chatContent =
+          className === "outgoing"
+            ? `<p></p>`
+            : `<span class="material-symbols-outlined">smart_toy</span><p></p>`;
+        chatLi.innerHTML = chatContent;
+        chatLi.querySelector("p").textContent = message;
+        return chatLi;
+      };
+
+      const generateResponse = (incomingChatLi) => {
+        const API_URL = `https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=${API_KEY}`;
+        const messageElement = incomingChatLi.querySelector("p");
+
+        const requestOptions = {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            contents: [
+              {
+                role: "user",
+                parts: [{ text: userMessage }],
+              },
+            ],
+          }),
+        };
+
+        fetch(API_URL, requestOptions)
+          .then((res) => res.json())
+          .then((data) => {
+            messageElement.classList.add("error");
+            messageElement.textContent =
+              data.candidates[0].content.parts[0].text; // Update message text with API response
+          })
+          .catch((error) => {
+            messageElement.textContent =
+              "Oops! Something went wrong. Please try again.";
+          })
+          .finally(() => chatbox.scrollTo(0, chatbox.scrollHeight));
+      };
+
+      const handleChat = () => {
+        userMessage = chatInput.value.trim();
+        if (!userMessage) return;
+        chatInput.value = "";
+        chatInput.style.height = `${inputInHeight}px`;
+
+        chatbox.appendChild(createChatLi(userMessage, "outgoing"));
+        chatbox.scrollTo(0, chatbox.scrollHeight);
+
+        setTimeout(() => {
+          const incomingChatLi = createChatLi("Thinking...", "incoming");
+          chatbox.appendChild(incomingChatLi);
+          chatbox.scrollTo(0, chatbox.scrollHeight);
+          generateResponse(incomingChatLi);
+        }, 600);
+      };
+
+      chatInput.addEventListener("input", () => {
+        chatInput.style.height = `${inputInHeight}px`;
+        chatInput.style.height = `${chatInput.scrollHeight}px`;
+      });
+
+      chatInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" && !e.shiftKey && window.innerWidth > 800) {
+          e.preventDefault();
+          handleChat();
+        }
+      });
+
+      sendChatBtn.addEventListener("click", handleChat);
+      chatbotCloseBtn.addEventListener("click", () =>
+        document.body.classList.remove("show-chatbot")
+      );
+      chatbotToggler.addEventListener("click", () =>
+        document.body.classList.toggle("show-chatbot")
+      );
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- 
+    - primary meta tags
+  -->
+    <title>HealthCare Website</title>
+    <meta name="title" content="HealthCare Website" />
+    <meta name="description" content="This is a Hospital webpage" />
+
+    <!-- 
+    - favicon
+  -->
+    <link
+      rel="shortcut icon"
+      href="../static/favicon.svg"
+      type="image/svg+xml"
+    />
+
+    <!-- 
+    - google font link
+  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- 
+    - custom css link
+  -->
+    <link rel="stylesheet" href="../static/css/style.css" />
+
+    <!-- 
+    - preload images
+  -->
+    <!-- <link rel="preload" as="image" href="./assets/images/hero-banner.png" /> -->
+    <link rel="preload" as="image" href="./assets/images/pattern-2.svg" />
+    <link rel="preload" as="image" href="./assets/images/pattern-3.svg" />
+  </head>
+
+  <body id="top">
+    <!-- 
+    - #HEADER
+  -->
+
+    <header class="header" data-header>
+      <div class="container">
+        <a href="#" class="logo">
+          <!-- <img src="./assets/images/logo.svg" width="119" height="37" alt="Vivek logo"> -->
+          <h2>Welcome, <span id="user_email_display"></span></h2>
+        </a>
+
+        <nav class="navbar" data-navbar>
+          <div class="navbar-top">
+            <a href="#" class="logo">
+              <!-- <img src="./assets/images/logo.svg" width="119" height="37" alt="Vivek logo"> -->
+              <h2>Welcome</h2>
+            </a>
+
+            <button
+              class="nav-close-btn"
+              aria-label="close menu"
+              data-nav-toggler
+            >
+              <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+            </button>
+          </div>
+
+          <ul class="navbar-list">
+            <li>
+              <a href="#home" class="navbar-link hover-1" data-nav-toggler
+                >Home</a
+              >
+            </li>
+
+            <li>
+              <a href="#topics" class="navbar-link hover-1" data-nav-toggler
+                >AI Doctor</a
+              >
+            </li>
+
+            <li>
+              <a href="#featured" class="navbar-link hover-1" data-nav-toggler
+                >Clinic Address</a
+              >
+            </li>
+
+            <li>
+              <a href="/contact" class="navbar-link hover-1" data-nav-toggler
+                >Contact</a
+              >
+            </li>
+
+            <li>
+              <a href="/WEB_UIKITS" class="navbar-link hover-1" data-nav-toggler
+                >1:1 Assistent Talk</a
+              >
+            </li>
+
+            <li>
+              <a href="#recent" class="navbar-link hover-1" data-nav-toggler
+                >Blog</a
+              >
+            </li>
+
+            <li>
+              <a
+                href="/pageNotFound"
+                class="navbar-link hover-1 nav-link"
+                data-nav-toggler
+                >Enter Details</a
+              >
+            </li>
+          </ul>
+
+          <div class="navbar-bottom">
+            <div class="profile-card">
+              <img
+                src="./assets/images/author-1.png"
+                width="48"
+                height="48"
+                alt="Steven"
+                class="profile-banner"
+              />
+
+              <div>
+                <p class="card-title">Hello Vivek !</p>
+
+                <!-- <p class="card-subtitle">
+                You have 3 new messages
+              </p> -->
+              </div>
+            </div>
+
+            <ul class="link-list">
+              <li>
+                <a href="#" class="navbar-bottom-link hover-1">Profile</a>
+              </li>
+
+              <li>
+                <a href="#" class="navbar-bottom-link hover-1"
+                  >Articles Saved</a
+                >
+              </li>
+
+              <li>
+                <a href="#" class="navbar-bottom-link hover-1">Add New Post</a>
+              </li>
+
+              <li>
+                <a href="#" class="navbar-bottom-link hover-1">My Likes</a>
+              </li>
+
+              <li>
+                <a href="#" class="navbar-bottom-link hover-1"
+                  >Account Setting</a
+                >
+              </li>
+
+              <li>
+                <a href="#" class="navbar-bottom-link hover-1">Sign Out</a>
+              </li>
+            </ul>
+          </div>
+
+          <p class="copyright-text">
+            Copyright 2024 © Hospital Website. Developed by Vivekxsh
+          </p>
+        </nav>
+
+        <!-- <a href="#" class="btn btn-primary">Login</a> -->
+        <a
+          href="https://doctor-appointment-ncqn.onrender.com"
+          class="btn btn-primary"
+          >Book Appointment</a
+        >
+
+        <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+          <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <article>
+        <!-- 
+        - #HERO
+      -->
+
+        <section class="hero" id="home" aria-label="home">
+          <div class="container">
+            <div class="hero-content">
+              <p class="hero-subtitle">Hello Everyone!</p>
+
+              <h1 class="headline headline-1 section-title">
+                <span class="span">The Future of Liveraging Science</span>
+              </h1>
+
+              <p class="hero-text">
+                Our Scientific, pathology, and regularity teams have the
+                experience needed to propel novel drug discoveries and the
+                development of companion diagnostics.
+              </p>
+
+              <!-- <div class="input-wrapper">
+
+              <input type="email" name="email_address" placeholder="Type your email address" required
+                class="input-field" autocomplete="off">
+
+              <button class="btn btn-primary">
+                <span class="span">Subscribe</span>
+
+                <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+              </button>
+
+            </div> -->
+            </div>
+
+            <div class="hero-banner">
+              <!-- <img src="./assets/images/vk.jpeg" width="327" height="490" alt="Vivek sharma" class="w-100" style="border-top-left-radius: 100px; border-top-right-radius: 100px; height: 550px; width: 400px;"> -->
+              <img
+                src="../static/images/doctor_img.png"
+                width="327"
+                height="490"
+                alt="Vivek sharma"
+                class="w-100"
+                style="
+                  border-top-left-radius: 100px;
+                  border-top-right-radius: 100px;
+                  height: 550px;
+                  width: 400px;
+                "
+              />
+
+              <img
+                src="../static/images/pattern-2.svg"
+                width="27"
+                height="26"
+                alt="shape"
+                class="shape shape-1"
+              />
+
+              <img
+                src="../static/images/pattern-3.svg"
+                width="27"
+                height="26"
+                alt="shape"
+                class="shape shape-2"
+              />
+            </div>
+
+            <img
+              src="../static/images/shadow-1.svg"
+              width="500"
+              height="800"
+              alt=""
+              class="hero-bg hero-bg-1"
+            />
+
+            <img
+              src="../static/images/shadow-2.svg"
+              width="500"
+              height="500"
+              alt=""
+              class="hero-bg hero-bg-2"
+            />
+          </div>
+        </section>
+
+        <!-- 
+        - #TOPICS
+      -->
+
+        <section class="topics" id="topics" aria-labelledby="topic-label">
+          <div class="container">
+            <div class="card topic-card">
+              <div class="card-content">
+                <h2
+                  class="headline headline-2 section-title card-title"
+                  id="topic-label"
+                >
+                  Your AI Doctor
+                </h2>
+
+                <p class="card-text">
+                  Please describe your symptoms to AI assistent and get help...
+                </p>
+
+                <button class="btn btn-primary">
+                  <a class="span nav-link" href="/index2">AI Doctor Here</a>
+
+                  <ion-icon
+                    name="arrow-forward-outline"
+                    aria-hidden="true"
+                  ></ion-icon>
+                </button>
+              </div>
+
+              <div class="slider" data-slider>
+                <ul class="slider-list" data-slider-container>
+                  <li class="slider-item">
+                    <a href="#" class="slider-card">
+                      <figure
+                        class="slider-banner img-holder"
+                        style="--width: 507; --height: 618"
+                      >
+                        <img
+                          src="../static/images/symptus.jpeg"
+                          width="507"
+                          height="618"
+                          loading="lazy"
+                          alt="Sport"
+                          class="img-cover"
+                        />
+                      </figure>
+                    </a>
+                  </li>
+
+                  <li class="slider-item">
+                    <a href="#" class="slider-card">
+                      <figure
+                        class="slider-banner img-holder"
+                        style="--width: 507; --height: 300"
+                      >
+                        <img
+                          src="../static/images/ai_doctor_next_image.jpg"
+                          width="507"
+                          height="618"
+                          loading="lazy"
+                          alt="Sport"
+                          class="img-cover"
+                        />
+                      </figure>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 
+        - #FEATURED POST
+      -->
+
+        <section class="section feature" aria-label="feature" id="featured">
+          <div class="container">
+            <h2 class="headline headline-2 section-title">
+              <span class="span">Nearby clinic</span>
+            </h2>
+
+            <p class="section-text">Patient can contact to near Hospitals</p>
+
+            <!-- MAP ADDED -->
+            <div class="iframe-container">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3934.252080352836!2d77.6808322747878!3d9.573525590511169!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b06db73c1d013e1%3A0x56c724c0b673c497!2sKalasalingam%20medical%20college!5e0!3m2!1sen!2sin!4v1725647082109!5m2!1sen!2sin"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+            <!-- MAP END  -->
+
+            <ul class="feature-list">
+              <li>
+                <div class="card feature-card">
+                  <figure
+                    class="card-banner img-holder"
+                    style="--width: 1602; --height: 903"
+                  >
+                    <img
+                      src="../static/images/Dr_jimmy_joshy.png"
+                      width="1602"
+                      height="903"
+                      loading="lazy"
+                      alt="A Skin Specialist Doctor"
+                      class="img-cover"
+                    />
+                  </figure>
+
+                  <div class="card-content">
+                    <div class="card-wrapper">
+                      <div class="card-tag">
+                        <a href="#" class="span hover-2">#dermatologist</a>
+
+                        <a href="#" class="span hover-2">#DailyLifestyle</a>
+                      </div>
+                    </div>
+
+                    <h3 class="headline headline-3">
+                      <a href="#" class="card-title hover-2">
+                        A Skin Specialist Doctor
+                      </a>
+                    </h3>
+
+                    <div class="card-wrapper">
+                      <div class="profile-card">
+                        <img
+                          src="../static/images/Dr_jimmy_joshy.png"
+                          width="48"
+                          height="48"
+                          loading="lazy"
+                          alt="Joseph"
+                          class="profile-banner"
+                        />
+
+                        <div>
+                          <p class="card-title">Dr Jimmy Doshi</p>
+                        </div>
+                      </div>
+
+                      <a href="#" class="card-btn">Book Your appointment</a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="card feature-card">
+                  <figure
+                    class="card-banner img-holder"
+                    style="--width: 1602; --height: 903"
+                  >
+                    <img
+                      src="../static/images/Dr._Baskar_Chockalingam.png"
+                      width="1602"
+                      height="903"
+                      loading="lazy"
+                      alt="Self-observation is the first step of inner unfolding"
+                      class="img-cover"
+                    />
+                  </figure>
+
+                  <div class="card-content">
+                    <div class="card-wrapper">
+                      <div class="card-tag">
+                        <a href="#" class="span hover-2">#Orthopedic</a>
+
+                        <a href="#" class="span hover-2">#DailyLifestyle</a>
+                      </div>
+                    </div>
+
+                    <h3 class="headline headline-3">
+                      <a href="#" class="card-title hover-2">
+                        A Bone Specialist Doctor
+                      </a>
+                    </h3>
+
+                    <div class="card-wrapper">
+                      <div class="profile-card">
+                        <img
+                          src="../static/images/Dr_Baskar.jpg"
+                          width="48"
+                          height="48"
+                          loading="lazy"
+                          alt="Joseph"
+                          class="profile-banner"
+                        />
+
+                        <div>
+                          <p class="card-title">Dr. Baskar Chockalingam</p>
+                        </div>
+                      </div>
+
+                      <a href="#" class="card-btn">Book Your appointment</a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="card feature-card">
+                  <figure
+                    class="card-banner img-holder"
+                    style="--width: 1602; --height: 903"
+                  >
+                    <img
+                      src="../static/images/General_Dentist.png"
+                      width="1602"
+                      height="903"
+                      loading="lazy"
+                      alt="Self-observation is the first step of inner unfolding"
+                      class="img-cover"
+                    />
+                  </figure>
+
+                  <div class="card-content">
+                    <div class="card-wrapper">
+                      <div class="card-tag">
+                        <a href="#" class="span hover-2">#Dentist</a>
+
+                        <a href="#" class="span hover-2">#DailyLifestyle</a>
+                      </div>
+                    </div>
+
+                    <h3 class="headline headline-3">
+                      <a href="#" class="card-title hover-2">
+                        A specialist Dentist
+                      </a>
+                    </h3>
+
+                    <div class="card-wrapper">
+                      <div class="profile-card">
+                        <img
+                          src="../static/images/General__Dentist.jpg"
+                          width="48"
+                          height="48"
+                          loading="lazy"
+                          alt="Joseph"
+                          class="profile-banner"
+                        />
+
+                        <div>
+                          <p class="card-title">General Dentist</p>
+                        </div>
+                      </div>
+
+                      <a href="#" class="card-btn">Book Your appointment</a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="card feature-card">
+                  <figure
+                    class="card-banner img-holder"
+                    style="--width: 1602; --height: 903"
+                  >
+                    <img
+                      src="../static/images/Dr_pathaks.jpeg"
+                      width="1602"
+                      height="903"
+                      loading="lazy"
+                      alt="Self-observation is the first step of inner unfolding"
+                      class="img-cover"
+                    />
+                  </figure>
+
+                  <div class="card-content">
+                    <div class="card-wrapper">
+                      <div class="card-tag">
+                        <a href="#" class="span hover-2">#pain</a>
+
+                        <a href="#" class="span hover-2">#Dailylifestyle</a>
+                      </div>
+                    </div>
+
+                    <h3 class="headline headline-3">
+                      <a href="#" class="card-title hover-2">
+                        A specialist Doctor of pain
+                      </a>
+                    </h3>
+
+                    <div class="card-wrapper">
+                      <div class="profile-card">
+                        <img
+                          src="../static/images/Dr_pathaks.jpeg"
+                          width="48"
+                          height="48"
+                          loading="lazy"
+                          alt="Joseph"
+                          class="profile-banner"
+                        />
+
+                        <div>
+                          <p class="card-title">Dr. Pathak</p>
+                        </div>
+                      </div>
+
+                      <a href="#" class="card-btn">Book Your appointment</a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="card feature-card">
+                  <figure
+                    class="card-banner img-holder"
+                    style="--width: 1602; --height: 903"
+                  >
+                    <img
+                      src="../static/images/Dr_Rashmi_Devaraj.png"
+                      width="1602"
+                      height="903"
+                      loading="lazy"
+                      alt="Self-observation is the first step of inner unfolding"
+                      class="img-cover"
+                    />
+                  </figure>
+
+                  <div class="card-content">
+                    <div class="card-wrapper">
+                      <div class="card-tag">
+                        <a href="#" class="span hover-2">#Neurologist</a>
+
+                        <a href="#" class="span hover-2">#DailyLifestyle</a>
+                      </div>
+                    </div>
+
+                    <h3 class="headline headline-3">
+                      <a href="#" class="card-title hover-2">
+                        A Best Neurologist in Bengluru
+                      </a>
+                    </h3>
+
+                    <div class="card-wrapper">
+                      <div class="profile-card">
+                        <img
+                          src="../static/images/Dr_Rashmi_Devaraj.png"
+                          width="48"
+                          height="48"
+                          loading="lazy"
+                          alt="Joseph"
+                          class="profile-banner"
+                        />
+
+                        <div>
+                          <p class="card-title">Dr Rashmi Devaraj</p>
+                        </div>
+                      </div>
+
+                      <a href="#" class="card-btn">Book Your appointment</a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+            <a href="#" class="btn btn-secondary">
+              <span class="span">Show More Posts</span>
+
+              <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+            </a>
+          </div>
+
+          <img
+            src="../static/images/shadow-3.svg"
+            width="500"
+            height="1500"
+            loading="lazy"
+            alt=""
+            class="feature-bg"
+          />
+        </section>
+
+        <!-- 
+        - #RECENT POST
+      -->
+
+        <section
+          class="section recent-post"
+          id="recent"
+          aria-labelledby="recent-label"
+        >
+          <div class="container">
+            <div class="post-main">
+              <h2 class="headline headline-2 section-title">
+                <span class="span">Recent posts</span>
+              </h2>
+
+              <p class="section-text">Don't miss the latest updates</p>
+
+              <ul class="grid-list">
+                <li>
+                  <div class="recent-post-card">
+                    <figure
+                      class="card-banner img-holder"
+                      style="--width: 271; --height: 258"
+                    >
+                      <img
+                        src="../static/images/weight.jpeg"
+                        width="271"
+                        height="258"
+                        loading="lazy"
+                        alt="Helpful Tips for Working from Home as a Freelancer"
+                        class="img-cover"
+                      />
+                    </figure>
+
+                    <div class="card-content">
+                      <a href="#" class="card-badge">weight loss Tips</a>
+
+                      <h3 class="headline headline-3 card-title">
+                        <a href="#" class="link hover-2"
+                          >Helpful Tips for weight loss</a
+                        >
+                      </h3>
+
+                      <p class="card-text">
+                        Cutting back on calories and engaging in regular
+                        physical activity may lead to gradual and sustained
+                        weight loss. Experts recommend getting at least 150
+                        minutes of exercise per week (or 30 minutes per day five
+                        days a week) and eating 500 fewer calories a day to lose
+                        up to 1 pound per week
+                      </p>
+
+                      <div class="card-wrapper">
+                        <div class="card-tag">
+                          <a href="#" class="span hover-2"># weight</a>
+
+                          <a href="#" class="span hover-2"># DailyLifestyle</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="recent-post-card">
+                    <figure
+                      class="card-banner img-holder"
+                      style="--width: 271; --height: 258"
+                    >
+                      <img
+                        src="../static/images/stay_hydrated.jpeg"
+                        width="271"
+                        height="258"
+                        loading="lazy"
+                        alt="Helpful Tips for Working from Home as a Freelancer"
+                        class="img-cover"
+                      />
+                    </figure>
+
+                    <div class="card-content">
+                      <a href="#" class="card-badge">Drink Water</a>
+
+                      <h3 class="headline headline-3 card-title">
+                        <a href="#" class="link hover-2"
+                          >Benefits of drinking more water</a
+                        >
+                      </h3>
+
+                      <p class="card-text">
+                        Keep a normal temperature. Lubricate and cushion joints.
+                        Protect your spinal cord and other sensitive tissues.
+                        Get rid of waste through urination, perspiration, and
+                        bowel movements.
+                      </p>
+
+                      <div class="card-wrapper">
+                        <div class="card-tag">
+                          <a href="#" class="span hover-2"># stayhydrated</a>
+
+                          <a href="#" class="span hover-2"># DailyLifestyle</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="recent-post-card">
+                    <figure
+                      class="card-banner img-holder"
+                      style="--width: 271; --height: 258"
+                    >
+                      <img
+                        src="../static/images/exercise_daily.jpeg"
+                        width="271"
+                        height="258"
+                        loading="lazy"
+                        alt="Helpful Tips for Working from Home as a Freelancer"
+                        class="img-cover"
+                      />
+                    </figure>
+
+                    <div class="card-content">
+                      <a href="#" class="card-badge">Benefits of exercise</a>
+
+                      <h3 class="headline headline-3 card-title">
+                        <a href="#" class="link hover-2"
+                          >Benefits of exercise</a
+                        >
+                      </h3>
+
+                      <p class="card-text">
+                        Exercise controls weight. ... Exercise combats health
+                        conditions and diseases. ... Exercise improves mood. ...
+                        Exercise boosts energy. ... Exercise promotes better
+                        sleep. ... Exercise puts the spark back into your sex
+                        life. ... Exercise can be fun — and social!
+                      </p>
+
+                      <div class="card-wrapper">
+                        <div class="card-tag">
+                          <a href="#" class="span hover-2"># exerciseDaily</a>
+
+                          <a href="#" class="span hover-2"># DailyLifestyle</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="recent-post-card">
+                    <figure
+                      class="card-banner img-holder"
+                      style="--width: 271; --height: 258"
+                    >
+                      <img
+                        src="../static/images/take_multi_vitamin.jpeg"
+                        width="271"
+                        height="258"
+                        loading="lazy"
+                        alt="Helpful Tips for Working from Home as a Freelancer"
+                        class="img-cover"
+                      />
+                    </figure>
+
+                    <div class="card-content">
+                      <a href="#" class="card-badge">Need of MultiVitamin</a>
+
+                      <h3 class="headline headline-3 card-title">
+                        <a href="#" class="link hover-2"
+                          >Need of Multivitamin</a
+                        >
+                      </h3>
+
+                      <p class="card-text">
+                        Highly restrictive diets and gastrointestinal
+                        conditions, or certain weight-loss surgeries that cause
+                        poor nutrient absorption, are examples of reasons why a
+                        multivitamin or individual vitamins might be
+                        recommended. A daily vitamin D supplement may be
+                        necessary when a person gets insufficient sun exposure.
+                      </p>
+
+                      <div class="card-wrapper">
+                        <div class="card-tag">
+                          <a href="#" class="span hover-2"># vitamin</a>
+
+                          <a href="#" class="span hover-2"># DailyLifestyle</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="recent-post-card">
+                    <figure
+                      class="card-banner img-holder"
+                      style="--width: 271; --height: 258"
+                    >
+                      <img
+                        src="../static/images/enogh_sleep.png"
+                        width="271"
+                        height="258"
+                        loading="lazy"
+                        alt="Helpful Tips for Working from Home as a Freelancer"
+                        class="img-cover"
+                      />
+                    </figure>
+
+                    <div class="card-content">
+                      <a href="#" class="card-badge">Need of enough sleep</a>
+
+                      <h3 class="headline headline-3 card-title">
+                        <a href="#" class="link hover-2"
+                          >Why do we need enough sleep</a
+                        >
+                      </h3>
+
+                      <p class="card-text">
+                        Good sleep improves your brain performance, mood, and
+                        health. Not getting enough quality sleep regularly
+                        raises the risk of many diseases and disorders. These
+                        range from heart disease and stroke to obesity and
+                        dementia. There's more to good sleep than just the hours
+                        spent in bed, says Dr.
+                      </p>
+
+                      <div class="card-wrapper">
+                        <div class="card-tag">
+                          <a href="#" class="span hover-2"># sleep</a>
+
+                          <a href="#" class="span hover-2"># DailyLifestyle</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <!-- 
+    - #FOOTER
+  -->
+
+    <footer>
+      <div class="container">
+        <div class="card footer">
+          <div class="section footer-top">
+            <div class="footer-brand">
+              <a href="#" class="logo">
+                <!-- <img src="./assets/images/logo.svg" width="119" height="37" loading="lazy" alt="Vivek logo"> -->
+                <h2>Hospital Portal</h2>
+              </a>
+
+              <p class="footer-text">
+                Welcome to the new Hospital website! We are thrilled to unveil
+                our new online platform, which has been designed to provide you
+                with an easier and more intuitive way to access information
+                about our hospital and the services we offer.
+              </p>
+
+              <p class="footer-list-title">Address</p>
+
+              <address class="footer-text address">
+                Krishnan koil, virudhunagar <br />
+                Tamil Nadu India
+              </address>
+            </div>
+
+            <div class="footer-list">
+              <p class="footer-list-title">Departments</p>
+
+              <ul>
+                <li>
+                  <a href="#" class="footer-link hover-2"
+                    >Clinical Department</a
+                  >
+                </li>
+
+                <li>
+                  <a href="#" class="footer-link hover-2"
+                    >Paramedical Department</a
+                  >
+                </li>
+
+                <li>
+                  <a href="#" class="footer-link hover-2"
+                    >Intensive Care Unit</a
+                  >
+                </li>
+
+                <li>
+                  <a href="#" class="footer-link hover-2"
+                    >Administrative Department</a
+                  >
+                </li>
+
+                <li>
+                  <a href="#" class="footer-link hover-2"
+                    >Supportive Department</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="footer-list">
+              <p class="footer-list-title">Contact US</p>
+
+              <p class="footer-text">
+                Please don’t hesitate to get in touch with us. We’ll be in
+                contact with you shortly.
+              </p>
+
+              <div class="input-wrapper">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your name"
+                  required
+                  class="input-field"
+                  autocomplete="off"
+                />
+
+                <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
+              </div>
+
+              <div class="input-wrapper">
+                <input
+                  type="email"
+                  name="email_address"
+                  placeholder="Email address"
+                  required
+                  class="input-field"
+                  autocomplete="off"
+                />
+
+                <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
+              </div>
+
+              <a href="#" class="btn btn-primary">
+                <span class="span">Submit</span>
+
+                <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-bottom">
+            <p class="copyright">
+              &copy; Developed by
+              <a href="#" class="copyright-link">Vivekxsh.</a>
+            </p>
+
+            <ul class="social-list">
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-twitter"></ion-icon>
+
+                  <span class="span">Twitter</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-linkedin"></ion-icon>
+
+                  <span class="span">LinkedIn</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-instagram"></ion-icon>
+
+                  <span class="span">Instagram</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- 
+    - #BACK TO TOP
+  -->
+
+    <a
+      href="#top"
+      class="back-top-btn"
+      aria-label="back to top"
+      data-back-top-btn
+    >
+      <ion-icon name="arrow-up-outline" aria-hidden="true"></ion-icon>
+    </a>
+
+    <!-- 
+    - custom js link
+  -->
+    <script src="../static/js/script.js"></script>
+
+    <!-- 
+    - ionicon link
+  -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
